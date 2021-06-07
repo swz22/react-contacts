@@ -67,11 +67,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <LoginPage />
-        <RegisterPage />
+        {/* <LoginPage /> */}
+        {/* <RegisterPage /> */}
         <ContactsPage contacts={this.state.contacts} />
-        <ContactDetailsPage contact={this.state.contacts[0]} />
-        <ContactCreatePage />
+        {/* <ContactDetailsPage contact={this.state.contacts[0]} /> */}
+        {/* <ContactCreatePage /> */}
       </div>
     );
   }
