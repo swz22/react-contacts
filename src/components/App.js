@@ -71,7 +71,7 @@ class App extends React.Component {
         {/* <RegisterPage /> */}
         <ContactsPage contacts={this.state.contacts} />
         {/* <ContactDetailsPage contact={this.state.contacts[0]} /> */}
-        {/* <ContactCreatePage /> */}
+        <ContactCreatePage />
       </div>
     );
   }
