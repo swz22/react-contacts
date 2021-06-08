@@ -1,24 +1,49 @@
-const  ContactDetailsCard = ({ contact }) => {
-    return (
-        <div>
-            <div>
-                <img src={contact?.profilePic} alt={`Profile of ${contact?.firstName}${contact?.lastName}.`}/>
-            </div>
-            <div>
-                <p>{contact?.firstName} {contact?.lastName}</p>
-                <dl>
-                    <dt>Phone Number</dt>
-                    <dd>{contact?.phoneNumber}</dd>
+import styled from "styled-components";
 
-                    <dt>Email</dt>
-                    <dd>{contact?.email}</dd>
+const Container = styled.div`
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 35px;
+`;
 
-                    <dt>Address</dt>
-                    <dd>{contact?.address}</dd>
-                </dl>
-            </div>
-        </div>
-    )
-}
+const Image = styled.img`
+  border-radius: 50%;
+  width: 150px;
+  height: auto;
+`;
+
+const ContactDetailsCard = ({ contact }) => {
+  return (
+    <Container>
+      <div>
+        <Image
+          src={contact?.profilePic}
+          alt={`Profile of ${contact?.firstName}${contact?.lastName}.`}
+        />
+      </div>
+      <div>
+        <h2>
+          {contact?.firstName} {contact?.lastName}
+        </h2>
+        <p>
+          {" "}
+          <b>Phone Number:</b> {contact?.phoneNumber}
+        </p>
+        <p>
+          {" "}
+          <b>Email:</b> {contact?.email}{" "}
+        </p>
+        <p>
+          {" "}
+          <b>Address:</b> {contact?.address}
+        </p>
+      </div>
+    </Container>
+  );
+};
 
 export default ContactDetailsCard;

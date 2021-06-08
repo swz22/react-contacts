@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
@@ -8,34 +9,87 @@ const LoginForm = () => {
     e.preventDefault();
   }
 
+  const FormContainer = styled.div`
+    background-color: white;
+    display: flex;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+  `;
+
+  const Form = styled.form`
+    display: inline-block;
+    margin: auto;
+    padding: 150px;
+  `;
+
+  const Input = styled.input`
+    width: 80%;
+    padding: 10px 180px;
+    margin: 0;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 19px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid grey;
+    ::placeholder {
+      color: black;
+    }
+  `;
+
+  const ButtonDiv = styled.div`
+    font-size: 18px;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `;
+
+  const Button = styled.button`
+    background-color: #b4b8b5;
+    font-size: 18px;
+    padding: 12px 16px;
+  `;
+
   return (
-    <form onSubmit={handleSubmission}>
-      <div>
-        <label htmlFor="username">Username</label>
-        <input
-          id="username"
-          name="username"
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <div>
-        <button type="submit">Login</button>
-      </div>
-    </form>
+    <FormContainer>
+      <Form onSubmit={handleSubmission}>
+        <div>
+          <label htmlFor="username"></label>
+          <Input
+            id="username"
+            name="username"
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="password"></label>
+          <Input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <p></p>
+
+        <ButtonDiv>
+          <Button type="submit">
+            <b>LOGIN</b>
+          </Button>
+        </ButtonDiv>
+
+        <p>
+          Don't have an account? <a href="/register">Register</a>.
+        </p>
+      </Form>
+    </FormContainer>
   );
 };
 
