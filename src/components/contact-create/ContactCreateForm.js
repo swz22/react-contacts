@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 
 const ContactCreateForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -12,77 +13,100 @@ const ContactCreateForm = () => {
     e.preventDefault();
   }
 
+  const FormContainer = styled.div`
+    background-color: #e4e4e4;
+    display: flex;
+    text-align: center;
+    margin: auto;
+  `;
+
+  const Form = styled.form`
+    display: inline-block;
+    text-align: left;
+    padding: 150px
+  `;
+
+  const Input = styled.input`
+  width: 90%;
+  padding: 10px 180px;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 19px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid grey;
+  background-color: #e4e4e4;
+  ::placeholder {
+    color: black;
+  }
+  `;
+
+
+
   return (
-    <form onSubmit={handleSubmission}>
-      <br />
+    <div class="container" style={{ backgroundColor: "darkgray" }}>
+      <FormContainer>
+        
+        <Form onSubmit={handleSubmission}>
 
-      <div>
-        <input
-          type="text"
-          placeholder="First Name"
-          name="firstName"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-      </div>
+        <img src ="https://i.pinimg.com/originals/e9/80/f7/e980f7be96698681e64bac92221cfb7d.png"></img>
 
-      <div>
-        <input
-          type="text"
-          placeholder="Last Name"
-          name="lastName"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-      </div>
+            <Input
+              type="text"
+              placeholder="First Name"
+              name="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
 
-      <div>
-        <input
-          type="tel"
-          placeholder="Phone Number"
-          name="phoneNumber"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-        />
-      </div>
+            <Input
+              type="text"
+              placeholder="Last Name"
+              name="lastName"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
 
-      <div>
-        <input
-          type="email"
-          placeholder="E-mail"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
+            <Input
+              type="tel"
+              placeholder="Phone Number"
+              name="phoneNumber"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
 
-      <div>
-        <input
-          type="text"
-          placeholder="Address"
-          name="address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        />
-      </div>
+            <Input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-      <div>
-        <input
-          type="text"
-          placeholder="Profile Picture Url"
-          name="profilePic"
-          value={profilePic}
-          onChange={(e) => setProfilePic(e.target.value)}
-        />
-      </div>
+            <Input
+              type="text"
+              placeholder="Address"
+              name="address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            />
 
-      <button type="submit">Add Contact</button>
-    </form>
+            <Input
+              type="text"
+              placeholder="Profile Picture Url"
+              name="profilePic"
+              value={profilePic}
+              onChange={(e) => setProfilePic(e.target.value)}
+            />
+
+          <button type="submit">Add Contact</button>
+        </Form>
+      </FormContainer>
+    </div>
   );
 };
 
 export default ContactCreateForm;
-
 
 //OLD CODE BELOW (CLASS BASED COMPONENT)
 

@@ -1,10 +1,16 @@
 import React from "react";
+import styled from 'styled-components';
 import LoginPage from "./login"
 import RegisterPage from "./register";
 import ContactsPage from "./contacts";
 import ContactDetailsPage from "./contact-details";
 import ContactCreatePage from "./contact-create";
 import { getContacts } from "../utils/contacts";
+
+const Heading = styled.h1`
+color: red;
+text-align: center;
+`;
 
 const mockContacts = [
   {
@@ -67,6 +73,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <Heading>Hello World</Heading>
         <LoginPage />
         <RegisterPage />
         <ContactsPage contacts={this.state.contacts} />
